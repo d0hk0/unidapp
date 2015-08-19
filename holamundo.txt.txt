@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 prueba repositorio 1
+=======
+prueba repositorio 2
+>>>>>>> 97f8e15664bb186ce6a33fb51df1ca221bcf7cb6
