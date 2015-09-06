@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="unidApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="ContainerX">
+    <meta name="author" content="myCompanyX">
+    <link rel="icon" href="">
+	<title>unidApp</title>
+	<!-- Scripts css's-->
+	<link rel="stylesheet" type="text/css" href="_libs/_css/themes/bootstrap.min.css">	
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		          </button>
+				<a class="navbar-brand" href="#">unidApp</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+      			<ul class="nav navbar-nav">      				    				
+      				<li class="dropdown">
+			          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Anuncios <span class="caret"></span></a>
+			          <ul class="dropdown-menu">			            
+			            <li><a href="#/">Nuevo anuncio</a></li>
+			          </ul>
+			        </li>
+      			</ul>
+
+      			<ul class="nav navbar-nav navbar-right" role="navigation">  			              
+  			        <li class="dropdown">
+			          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><small>Bienvenido</small>, Pepe <span class="caret"></span></a>
+			          <ul class="dropdown-menu dropdown-caret dropdown-close">			            
+			            <li><a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp; Perfil</a></li>
+			            <li><a href="#"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp; Administracion</a></li>
+			            <li role="separator" class="divider"></li>
+			            <li><a href="#"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;&nbsp;Desconectar</a><li>
+			          </ul>
+			        </li>
+      			</ul>
+      		</div>
+		</div>
+	</nav>
+	<div class="container" ng-view><!--Aqui va todo el contenido a mostrar--></div>
+	<!--Angular Scripts uses-->
+	<script type="text/javascript" src="_libs/_js/angular.js"></script>
+	<script type="text/javascript" src="_libs/_js/angular-resource.js"></script>
+	<script type="text/javascript" src="_libs/_js/angular-route.js"></script>
+	<!--Jquery Library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>	
+	<!--Extra Library's -->
+	<script type="text/javascript" src="_libs/_js/bootstrap.js"></script>
+	<script type="text/javascript" src="_libs/_js/theapp.js"></script>
+	<script type="text/javascript" src="_libs/_js/controllers.js"></script>
+</body>
+</html>
