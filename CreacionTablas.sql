@@ -65,12 +65,3 @@ CREATE TABLE IF NOT EXISTS Tbl_Anuncio_X_Unidad (
 	Dtm_Fecha_Crea DATE NULL COMMENT 'Fecha de Creacion o Actualizacion',
 	PRIMARY KEY (Num_Id_Anun_Unidad)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='tabla que contiene los anuncios generales relacionados a una unidad' AUTO_INCREMENT=0 ;
-
-
-
-
-
-
-
-
-
