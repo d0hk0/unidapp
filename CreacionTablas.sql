@@ -1,4 +1,4 @@
---Script para la creacion de las tablas del sistema UnidApp
+-- Script para crear la Base de Datos del sistema UnidApp
 --
 -- Base de datos: `bdunidapp`
 --
