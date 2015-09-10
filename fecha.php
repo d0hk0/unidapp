@@ -3,6 +3,7 @@
 <body> 
 <?php
   $dia=date("d");
+  
   if ($dia<=10)
   {
     echo "sitio activo";
