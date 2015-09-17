@@ -2,7 +2,7 @@
 
 /*SERVICIO PARA xxxxxxxxxxxxxxx */
 $theApp->get('/', function() use($theApp){
-	
+	echo 'hola....'
 });
 
 /*SERVICIO PARA CREAR UN NUEVO ANUNCIO ADMINISTRADOR*/
