@@ -4,3 +4,38 @@
 $theApp->get('/', function() use($theApp){
 	
 });
+
+/*SERVICIO PARA CREAR UN NUEVO PRODUCTO*/
+$theApp->post('/anuncios_admin/', function() use($theApp){
+
+	$request = $theApp->request();
+	   $body = $request->getBody();
+	   $input = json_decode($body); 
+
+	$titulo	 = (string)$input->titulo_anuna;
+	$descripcion = (string)$input->descripcion_anuna;
+	$criterio = (string)$input->criterio_anuna;
+	$usuarioid = (string)$input->usuarioid_anuna;
+	
+	try {
+		$getConnection = connect();
+
+		$query = $getConnection->prepare('INSERT INTO tbl_anuncios_admin VALUES (null,?,?,?,?,now())');
+		$query->bindParam(1, $titulo);
+		$query->bindParam(2, $descripcion);
+		$query->bindParam(3, $criterio);
+		$query->bindParam(4, $usuarioid);
+		$query->execute();
+		$prdId = $getConnection->lastInsertId();
+		$getConnection =  null;
+
+		$theApp->response->headers->set('Content-type', 'application/json');
+		$theApp->response->status(200);
+
+		$datosRes = array('message'=>$prdId);
+		$theApp->response->body(json_encode($datosRes));
+
+	} catch (PDOException $e) {
+		echo 'Error -> ' . $e->getMessage();
+	}
+});
