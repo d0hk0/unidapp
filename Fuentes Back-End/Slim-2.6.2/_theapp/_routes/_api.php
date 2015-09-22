@@ -42,7 +42,7 @@ $theApp->post('/anuncios_admin', function() use($theApp){
 
 
 /*SERVICIO PARA CREAR UN NUEVO ANUNCIO ADMINISTRADOR*/
-$theApp->post('/anuncios_gen/', function() use($theApp){
+$theApp->post('/anuncios_gen', function() use($theApp){
 
 	$request = $theApp->request();
 	   $body = $request->getBody();

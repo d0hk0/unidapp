@@ -11,4 +11,5 @@ define('CONSGBL',true); //define la constante CONSGBL para verificar que se entr
 require '_theapp/_db/_conexion.php';//Importamos la conexion a la Base de Datos
 require '_theapp/_routes/_api.php';//Importamos le Api a usar
 
+
 $theApp->run();//Iniciamos la App-ApiRest
