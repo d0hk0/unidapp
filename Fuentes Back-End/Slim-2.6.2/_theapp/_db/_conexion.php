@@ -8,7 +8,7 @@ function connect(){
 		$user_db = 'root'; $pass_db = '';//local
 		//$user_db = 'titandes_apis'; $pass_db = 'user.apis';//server
 		
-		$connection = new PDO('mysql:host=localhost;dbname=xxxxxxx', $user_db, $pass_db);//local
+		$connection = new PDO('mysql:host=localhost;dbname=bdunidapp', $user_db, $pass_db);//local
 		//$connection = new PDO('mysql:host=localhost;dbname=titandes_apirestful01', $user_db, $pass_db);//server
 		$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
