@@ -1,12 +1,11 @@
 <?php if(!defined('CONSGBL')) die ('No tiene permisos sobre este directorio'); //Bloque que confirma que se debe haber pasnado primero por el enrrutador 
 
-/*SERVICIO PARA xxxxxxxxxxxxxxx */
-$theApp->get('/hello/:name', function() use($theApp){
-	echo "hello $name";
+$theApp->get('/', function() use($theApp){
+	echo 'Slim php para la creacion de Api Rest';
 });
 
 /*SERVICIO PARA CREAR UN NUEVO ANUNCIO ADMINISTRADOR*/
-$theApp->post('/anuncios_admin', function() use($theApp){
+$theApp->post('/anuncios_admin/', function() use($theApp){
 
 	$request = $theApp->request();
 	   $body = $request->getBody();
@@ -42,7 +41,7 @@ $theApp->post('/anuncios_admin', function() use($theApp){
 
 
 /*SERVICIO PARA CREAR UN NUEVO ANUNCIO ADMINISTRADOR*/
-$theApp->post('/anuncios_gen', function() use($theApp){
+$theApp->post('/anuncios_gen/', function() use($theApp){
 
 	$request = $theApp->request();
 	   $body = $request->getBody();
