@@ -2,5 +2,5 @@
 
 /*SERVICIO PARA xxxxxxxxxxxxxxx */
 $theApp->get('/', function() use($theApp){
-	
+	echo 'Slim PHP es un micro framework para el desarrollo agil de Api Rest... Enjoy';
 });

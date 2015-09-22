@@ -137,4 +137,4 @@ ALTER TABLE tbl_anuncios_gen
 ALTER TABLE tbl_anuncio_x_unidad
   ADD CONSTRAINT tbl_anuncio_x_unidad_ibfk_1 FOREIGN KEY (FK_Num_Id_Anun_Gen) REFERENCES tbl_anuncios_gen (Num_Id_Anun_Gen),
   ADD CONSTRAINT tbl_anuncio_x_unidad_ibfk_2 FOREIGN KEY (FK_Num_Id_Unidad) REFERENCES tbl_unidades (Num_Id_Unidad);
->>>>>>> origin/master
+

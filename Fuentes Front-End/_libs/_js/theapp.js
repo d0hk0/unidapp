@@ -4,7 +4,7 @@ angular.module("unidApp", ["ngRoute","ngResource"])
 		
 		.when("/", {
 			controller: "",
-			templateUrl: "_views/"
+			templateUrl: ""
 		})
 		
 		.otherwise("/");

@@ -8,7 +8,7 @@ $theApp = new \Slim\Slim();//Instanciamos Slim como theApp
 
 define('CONSGBL',true); //define la constante CONSGBL para verificar que se entro a la clase enrutadora
 
-require '_theapp/_lib/cone.php';//Importamos la conexion a la Base de Datos
-require '_theapp/_routes/api.php';//Importamos le Api a usar
+require '_theapp/_db/_conexion.php';//Importamos la conexion a la Base de Datos
+require '_theapp/_routes/_api.php';//Importamos le Api a usar
 
 $theApp->run();//Iniciamos la App-ApiRest
