@@ -1,8 +1,8 @@
 <?php if(!defined('CONSGBL')) die ('No tiene permisos sobre este directorio'); //Bloque que confirma que se debe haber pasnado primero por el enrrutador 
 
 /*SERVICIO PARA xxxxxxxxxxxxxxx */
-$theApp->get('/', function() use($theApp){
-	echo 'hola....';
+$theApp->get('/hello/:name', function() use($theApp){
+	echo "hello $name";
 });
 
 /*SERVICIO PARA CREAR UN NUEVO ANUNCIO ADMINISTRADOR*/
