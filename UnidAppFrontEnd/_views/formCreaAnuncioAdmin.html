@@ -1,0 +1,30 @@
+<h3>{{ vrTitAnuncios }}</h3>
+<hr>
+<form role="form" name="formAnunAdmin" class="form-horizontal" ng-controller="anunciosController" ng-submit="crearAnuncioAdmin()">
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Titulo</label>
+		<div class="col-sm-6">
+			<input type="text" name="aa_titulo" class="form-control" ng-model="aa_titulo" id="" placeholder="Titulo anuncio" required>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Descripcion</label>
+		<div class="col-sm-6">
+			<textarea rows="5" name="desc_mov" class="form-control" ng-model="aa_descripcion" id="" placeholder="Descripcion anuncio" required></textarea>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Criterio</label>
+		<div class="col-sm-3">			    		
+				<select class="form-control" name="tipo_mov" ng-model="aa_criterio" required>
+				  <option value="">---</option>
+				  <option value="A">Alto</option>
+				  <option value="M">Medio</option>
+				  <option value="B">Bajo</option>
+				</select>			
+		</div>
+	</div>
+	<hr>
+	<button type="submit" class="btn btn-success" ng-disabled="formAnunAdmin.aa_titulo.$invalid">Crear anuncio</button>
+	<button type="button" class="btn btn-warning" ng-click="reset()" >Limpiar</button>
+</form>
