@@ -24,6 +24,17 @@
 				</select>			
 		</div>
 	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Criterio</label>
+		<div class="col-sm-3">			    		
+				<select class="form-control" name="tipo_mov" ng-model="aa_usuarioid" required>
+				  <option value="1">1</option>
+				  <option value="2">2</option>
+				  <option value="3">3</option>
+				  <option value="4">4</option>
+				</select>			
+		</div>
+	</div>
 	<hr>
 	<button type="submit" class="btn btn-success" ng-disabled="formAnunAdmin.aa_titulo.$invalid">Crear anuncio</button>
 	<button type="button" class="btn btn-warning" ng-click="reset()" >Limpiar</button>

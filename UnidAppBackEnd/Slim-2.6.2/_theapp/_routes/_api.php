@@ -6,16 +6,16 @@ $theApp->get('/', function() use($theApp){
 });
 
 /*SERVICIO PARA CREAR UN NUEVO ANUNCIO ADMINISTRADOR*/
-$theApp->post('/anuncios_admin/', function() use($theApp){
+$theApp->post('/anunciosadmin/', function() use($theApp){
 
 	$request = $theApp->request();
 	   $body = $request->getBody();
 	   $input = json_decode($body); 
 
-	$titulo	 = (string)$input->titulo_anuna;
-	$descripcion = (string)$input->descripcion_anuna;
-	$criterio = (string)$input->criterio_anuna;
-	$usuarioid = (string)$input->usuarioid_anuna;
+	$titulo	 = (string)$input->aa_titulo;
+	$descripcion = (string)$input->aa_descripcion;
+	$criterio = (string)$input->aa_criterio;
+	$usuarioid = (string)$input->aa_usuarioid;
 	
 	try {
 		$getConnection = connect();
@@ -42,7 +42,7 @@ $theApp->post('/anuncios_admin/', function() use($theApp){
 
 
 /*SERVICIO PARA CREAR UN NUEVO ANUNCIO ADMINISTRADOR*/
-$theApp->post('/anuncios_gen/', function() use($theApp){
+$theApp->post('/anunciosgen/', function() use($theApp){
 
 	$request = $theApp->request();
 	   $body = $request->getBody();
