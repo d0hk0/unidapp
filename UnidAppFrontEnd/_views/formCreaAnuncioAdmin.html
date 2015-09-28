@@ -4,7 +4,7 @@
 	<div class="form-group">
 		<label class="col-sm-2 control-label">Titulo</label>
 		<div class="col-sm-6">
-			<input type="text" name="aa_titulo" class="form-control" ng-model="aa_titulo" id="" placeholder="Titulo anuncio" required>
+			<input type="text" name="aa_titulo" class="form-control" ng-model="post.aa_titulo" id="" placeholder="Titulo anuncio" required>
 		</div>
 	</div>
 	<div class="form-group">
@@ -38,4 +38,6 @@
 	<hr>
 	<button type="submit" class="btn btn-success" ng-disabled="formAnunAdmin.aa_titulo.$invalid">Crear anuncio</button>
 	<button type="button" class="btn btn-warning" ng-click="reset()" >Limpiar</button>
+
+	<h3>{{ vrAnuncioCreado }}</h3>
 </form>
