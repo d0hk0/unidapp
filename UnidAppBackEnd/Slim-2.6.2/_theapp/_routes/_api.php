@@ -16,7 +16,6 @@ $theApp->get('/anunciosadmin/:titulo/:descripcion/:criterio/:usuarioid', functio
 	$descripcion = (string)$input->aa_descripcion;
 	$criterio = (string)$input->aa_criterio;
 	$usuarioid = (string)$input->aa_usuarioid;
-
 	*/
 	try {
 		$getConnection = connect();
@@ -36,7 +35,7 @@ $theApp->get('/anunciosadmin/:titulo/:descripcion/:criterio/:usuarioid', functio
 		$datosRes = array('message'=>$prdId);
 		$theApp->response->body(json_encode($datosRes));
 
-		echo "se creo el anuncio: ".$titulo." con descripacion: ".$descripcion."(".$criterio.$usuarioid.")";
+		echo "se creo el anuncio administracion: ".$titulo." con descripacion: ".$descripcion."(".$criterio.$usuarioid.")";
 
 	} catch (PDOException $e) {
 		echo 'Error -> ' . $e->getMessage();
@@ -45,7 +44,7 @@ $theApp->get('/anunciosadmin/:titulo/:descripcion/:criterio/:usuarioid', functio
 
 
 //SERVICIO PARA CREAR UN NUEVO ANUNCIO ADMINISTRADOR
-$theApp->get('/anunciosadmin/:titulo/:descripcion/:criterio/:usuarioid', function($titulo, $descripcion, $criterio, $usuarioid) use($theApp){
+$theApp->get('/anunciosgen/:titulo/:descripcion/:criterio/:usuarioid', function($titulo, $descripcion, $criterio, $usuarioid) use($theApp){
 	
 	/*$request = $theApp->request();
 	   $body = $request->getBody();
@@ -55,7 +54,6 @@ $theApp->get('/anunciosadmin/:titulo/:descripcion/:criterio/:usuarioid', functio
 	$descripcion = (string)$input->aa_descripcion;
 	$criterio = (string)$input->aa_criterio;
 	$usuarioid = (string)$input->aa_usuarioid;
-
 	*/
 	try {
 		$getConnection = connect();
@@ -75,7 +73,9 @@ $theApp->get('/anunciosadmin/:titulo/:descripcion/:criterio/:usuarioid', functio
 		$datosRes = array('message'=>$prdId);
 		$theApp->response->body(json_encode($datosRes));
 
+		echo "se creo el anuncio general: ".$titulo." con descripacion: ".$descripcion."(".$criterio.$usuarioid.")";
+
 	} catch (PDOException $e) {
 		echo 'Error -> ' . $e->getMessage();
 	}
-});*/
+});
