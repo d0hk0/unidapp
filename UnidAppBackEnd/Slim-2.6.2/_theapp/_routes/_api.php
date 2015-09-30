@@ -8,7 +8,6 @@ $theApp->get('/', function() use($theApp){
 /*SERVICIO PARA CREAR UN NUEVO ANUNCIO ADMINISTRADOR*/
 $theApp->get('/anunciosadmin/:titulo/:descripcion/:criterio/:usuarioid', function($titulo, $descripcion, $criterio, $usuarioid) use($theApp){
 	
-
 	/*$request = $theApp->request();
 	   $body = $request->getBody();
 	   $input = json_decode($body); 
@@ -45,18 +44,19 @@ $theApp->get('/anunciosadmin/:titulo/:descripcion/:criterio/:usuarioid', functio
 });
 
 
-/*SERVICIO PARA CREAR UN NUEVO ANUNCIO ADMINISTRADOR
-$theApp->post('/anunciosgen/', function() use($theApp){
-
-	$request = $theApp->request();
+//SERVICIO PARA CREAR UN NUEVO ANUNCIO ADMINISTRADOR
+$theApp->get('/anunciosadmin/:titulo/:descripcion/:criterio/:usuarioid', function($titulo, $descripcion, $criterio, $usuarioid) use($theApp){
+	
+	/*$request = $theApp->request();
 	   $body = $request->getBody();
 	   $input = json_decode($body); 
 
-	$titulo	 = (string)$input->titulo_anungen;
-	$descripcion = (string)$input->descripcion_anungen;
-	$criterio = (string)$input->criterio_anungen;
-	$usuarioid = (string)$input->usuarioid_anungen;
-	
+	$titulo	 = (string)$input->aa_titulo;
+	$descripcion = (string)$input->aa_descripcion;
+	$criterio = (string)$input->aa_criterio;
+	$usuarioid = (string)$input->aa_usuarioid;
+
+	*/
 	try {
 		$getConnection = connect();
 
