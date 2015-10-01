@@ -76,7 +76,7 @@ $theApp->get('/anunciosgen/:titulo/:descripcion/:criterio/:usuarioid', function(
 	}
 });
 
-//SERVICIO PARA CONSULTAR UN NUEVO ANUNCIO GENERALES
+//SERVICIO PARA CONSULTAR UN NUEVO ANUNCIO ADMINISTRADOR
 $theApp->get('/anunciosadmin/', function() use($theApp){
 	try {
 		$getConnection = connect();
@@ -102,6 +102,45 @@ $theApp->get('/anunciosgen/', function() use($theApp){
 		$getConnection = connect();
 
 		$query = $getConnection->query('Select * from tbl_anuncios_gen');
+		$getConnection =  null;
+
+		$theApp->response->headers->set('Content-type', 'application/json');
+		$theApp->response->status(200);
+
+		$datosRes = $query->fetchall();
+		$theApp->response->body(json_encode($datosRes));
+
+	} catch (PDOException $e) {
+		echo 'Error -> ' . $e->getMessage();
+	}
+});
+
+//SERVICIO PARA ELIMINAR UN ANUNCIO ADMINISTRACION
+$theApp->delete('/anunciosadmin/:id', function($id) use($theApp){
+	try {
+		$getConnection = connect();
+
+		$query = $getConnection->query('DELETE FROM tbl_anuncios_admin WHERE Num_Id_Anun_Admin ='. $id);
+		$getConnection =  null;
+
+		$theApp->response->headers->set('Content-type', 'application/json');
+		$theApp->response->status(200);
+
+		$datosRes = $query->fetchall();
+		$theApp->response->body(json_encode($datosRes));
+
+	} catch (PDOException $e) {
+		echo 'Error -> ' . $e->getMessage();
+	}
+});
+
+
+//SERVICIO PARA ELIMINAR UN ANUNCIO GENERAL
+$theApp->delete('/anunciosgen/:id', function($id) use($theApp){
+	try {
+		$getConnection = connect();
+
+		$query = $getConnection->query('DELETE FROM tbl_anuncios_gen WHERE Num_Id_Anun_Gen'. $id);
 		$getConnection =  null;
 
 		$theApp->response->headers->set('Content-type', 'application/json');
