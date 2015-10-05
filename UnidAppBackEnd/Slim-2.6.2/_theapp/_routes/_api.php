@@ -59,6 +59,10 @@ $theApp->get('/anunciosgen/:titulo/:descripcion/:criterio/:usuarioid', function(
 		$getConnection = connect();
 
 		$query = $getConnection->prepare('INSERT INTO tbl_anuncios_gen VALUES (null,?,?,now(),?,?)');
+		$query->bindParam(1, $titulo);
+		$query->bindParam(2, $descripcion);
+		$query->bindParam(3, $criterio);
+		$query->bindParam(4, $usuarioid);
 		$query->execute();
 		$prdId = $getConnection->lastInsertId();
 		$getConnection =  null;
@@ -135,6 +139,39 @@ $theApp->delete('/anunciosadmin/:id', function($id) use($theApp){
 
 //SERVICIO PARA ELIMINAR UN ANUNCIO GENERAL
 $theApp->delete('/anunciosgen/:id', function($id) use($theApp){
+	try {
+		$getConnection = connect();
+
+		$query = $getConnection->query('DELETE FROM tbl_anuncios_gen WHERE Num_Id_Anun_Gen='. $id);
+		$getConnection =  null;
+
+		$theApp->response->body('Registro elmininado de anuncios generales '.$id);
+
+	} catch (PDOException $e) {
+		echo 'Error -> ' . $e->getMessage();
+	}
+});
+
+//SERVICIO PARA ACTUALIZAR UN ANUNCIO ADMINISTRACION
+$theApp->put('/anunciosadmin/:id', function($id) use($theApp){
+
+	try {
+		$getConnection = connect();
+
+		$query = $getConnection->query('DELETE FROM tbl_anuncios_admin WHERE Num_Id_Anun_Admin ='. $id);
+		$getConnection =  null;	
+
+		$theApp->response->body('Registro elmininado de anuncios administrativos '.$id);
+
+
+	} catch (PDOException $e) {
+		echo 'Error -> ' . $e->getMessage();
+	}
+});
+
+
+//SERVICIO PARA ACTUALIZAR UN ANUNCIO GENERAL
+$theApp->put('/anunciosgen/:id', function($id) use($theApp){
 	try {
 		$getConnection = connect();
 
