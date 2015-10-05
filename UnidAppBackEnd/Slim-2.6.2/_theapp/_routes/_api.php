@@ -153,16 +153,25 @@ $theApp->delete('/anunciosgen/:id', function($id) use($theApp){
 });
 
 //SERVICIO PARA ACTUALIZAR UN ANUNCIO ADMINISTRACION
-$theApp->put('/anunciosadmin/:id', function($id) use($theApp){
+$theApp->put('/anunciosadmin/:id/:titulo/:descripcion/:criterio', function($id, $titulo, $descripcion, $criterio) use($theApp){
 
 	try {
 		$getConnection = connect();
 
-		$query = $getConnection->query('DELETE FROM tbl_anuncios_admin WHERE Num_Id_Anun_Admin ='. $id);
-		$getConnection =  null;	
+		$query = $getConnection->prepare('UPDATE tbl_anuncios_admin SET Str_Tit_Anun=?,Str_Desc_Admin=?,FK_Num_Id_Criterio=?,Dtm_Fecha_Crea=now() WHERE Num_Id_Anun_Admin=?');
+		$query->bindParam(1, $titulo);
+		$query->bindParam(2, $descripcion);
+		$query->bindParam(3, $criterio);
+		$query->bindParam(4, $id);
+		$query->execute();
+		$prdId = $getConnection->lastInsertId();
+		$getConnection =  null;
 
-		$theApp->response->body('Registro elmininado de anuncios administrativos '.$id);
+		$theApp->response->headers->set('Content-type', 'application/json');
+		$theApp->response->status(200);
 
+		$datosRes = array('message'=>$prdId);
+		$theApp->response->body(json_encode($datosRes));
 
 	} catch (PDOException $e) {
 		echo 'Error -> ' . $e->getMessage();
@@ -171,14 +180,24 @@ $theApp->put('/anunciosadmin/:id', function($id) use($theApp){
 
 
 //SERVICIO PARA ACTUALIZAR UN ANUNCIO GENERAL
-$theApp->put('/anunciosgen/:id', function($id) use($theApp){
+$theApp->put('/anunciosgen/:id/:titulo/:descripcion/:criterio', function($id, $titulo, $descripcion, $criterio) use($theApp){
 	try {
 		$getConnection = connect();
-
-		$query = $getConnection->query('DELETE FROM tbl_anuncios_gen WHERE Num_Id_Anun_Gen='. $id);
+		
+		$query = $getConnection->prepare('UPDATE tbl_anuncios_gen SET Str_Tit_Anun=?,Str_Desc_Admin=?,FK_Num_Id_Criterio=?,Dtm_Fecha_Crea=now() WHERE Num_Id_Anun_Gen=?');
+		$query->bindParam(1, $titulo);
+		$query->bindParam(2, $descripcion);
+		$query->bindParam(3, $criterio);
+		$query->bindParam(4, $id);
+		$query->execute();
+		$prdId = $getConnection->lastInsertId();
 		$getConnection =  null;
 
-		$theApp->response->body('Registro elmininado de anuncios generales '.$id);
+		$theApp->response->headers->set('Content-type', 'application/json');
+		$theApp->response->status(200);
+
+		$datosRes = array('message'=>$prdId);
+		$theApp->response->body(json_encode($datosRes));
 
 	} catch (PDOException $e) {
 		echo 'Error -> ' . $e->getMessage();

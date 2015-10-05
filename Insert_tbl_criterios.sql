@@ -1,4 +1,4 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 4.1.14
 -- http://www.phpmyadmin.net
 --
@@ -39,6 +39,8 @@ CREATE TABLE IF NOT EXISTS `tbl_criterios` (
 
 INSERT INTO `tbl_criterios` (`Num_Id_Criterio`, `Str_Desc_Criterio`, `Dtm_Fecha_Crea`) VALUES
 (1, 'A', now());
+
+INSERT INTO `tbl_criterios`(`Str_Desc_Criterio`, `Dtm_Fecha_Crea`) VALUES ('criterio 2',now())
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
