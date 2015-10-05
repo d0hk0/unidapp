@@ -9,7 +9,7 @@ $theApp->get('/', function() use($theApp){
 // CRUD PARA LOS ANUNCIOS QUE PUBLICA EL ADMINISTRADOR
 //--------------------------------------------------------------------------------------------------------------
 //C: SERVICIO PARA CREAR UN NUEVO ANUNCIO ADMINISTRADOR
-$theApp->get('/anunciosadmin/:titulo/:descripcion/:criterio/:usuarioid', function($titulo, $descripcion, $criterio, $usuarioid) use($theApp){
+$theApp->post('/anunciosadmin/:titulo/:descripcion/:criterio/:usuarioid', function($titulo, $descripcion, $criterio, $usuarioid) use($theApp){
 	
 	/*$request = $theApp->request();
 	   $body = $request->getBody();
@@ -205,3 +205,7 @@ $theApp->delete('/anunciosgen/:id', function($id) use($theApp){
 		echo 'Error -> ' . $e->getMessage();
 	}
 });
+
+//--------------------------------------------------------------------------------------------------------------
+// CRUD PARA LAS UNIDADES
+//--------------------------------------------------------------------------------------------------------------
