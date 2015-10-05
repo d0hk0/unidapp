@@ -254,7 +254,7 @@ $theApp->get('/unidad/', function() use($theApp){
 	}
 });
 
-//U: SERVICIO PARA ACTUALIZAR UN ANUNCIO ADMINISTRACION
+//U: SERVICIO PARA ACTUALIZAR UNA UNIDAD
 $theApp->put('/unidad/:id/:nombre/:direccion/:numeroaptos', function($id, $nombre, $direccion, $numeroaptos) use($theApp){
 
 	try {
@@ -280,7 +280,7 @@ $theApp->put('/unidad/:id/:nombre/:direccion/:numeroaptos', function($id, $nombr
 	}
 });
 
-//D: SERVICIO PARA ELIMINAR UN ANUNCIO ADMINISTRACION
+//D: SERVICIO PARA ELIMINAR UNA UNIDAD
 $theApp->delete('/unidad/:id', function($id) use($theApp){
 
 	try {
@@ -289,7 +289,94 @@ $theApp->delete('/unidad/:id', function($id) use($theApp){
 		$query = $getConnection->query('DELETE FROM tbl_unidades WHERE Num_Id_Unidad ='. $id);
 		$getConnection =  null;	
 
-		$theApp->response->body('Registro elmininado de anuncios administrativos '.$id);
+		$theApp->response->body('Registro elmininado de unidades '.$id);
+
+
+	} catch (PDOException $e) {
+		echo 'Error -> ' . $e->getMessage();
+	}
+});
+
+//--------------------------------------------------------------------------------------------------------------
+// CRUD PARA LOS CRITERIOS
+//--------------------------------------------------------------------------------------------------------------
+//C: SERVICIO PARA CREAR UN NUEVO CRITERIO
+$theApp->post('/criterio/:descripcion', function($descripcion) use($theApp){
+	try {
+		$getConnection = connect();
+
+		$query = $getConnection->prepare('INSERT INTO tbl_criterios VALUES (null,?,now())');
+		$query->bindParam(1, $descripcion);
+		$query->execute();
+		$prdId = $getConnection->lastInsertId();
+		$getConnection =  null;
+
+		$theApp->response->headers->set('Content-type', 'application/json');
+		$theApp->response->status(200);
+
+		$datosRes = array('message'=>$prdId);
+		$theApp->response->body(json_encode($datosRes));
+
+		echo "se creo el criterio: ".$descripcion;
+
+	} catch (PDOException $e) {
+		echo 'Error -> ' . $e->getMessage();
+	}
+});
+
+//R: SERVICIO PARA CONSULTAR TODOS LOS CRITERIOS
+$theApp->get('/criterio/', function() use($theApp){
+	try {
+		$getConnection = connect();
+
+		$query = $getConnection->query('Select * from tbl_criterios');
+		$getConnection =  null;
+
+		$theApp->response->headers->set('Content-type', 'application/json');
+		$theApp->response->status(200);
+
+		$datosRes = $query->fetchall();
+		$theApp->response->body(json_encode($datosRes));
+
+	} catch (PDOException $e) {
+		echo 'Error -> ' . $e->getMessage();
+	}
+});
+
+//U: SERVICIO PARA ACTUALIZAR UN CRITERIO
+$theApp->put('/criterio/:id/:descripcion', function($id, $descripcion) use($theApp){
+
+	try {
+		$getConnection = connect();
+
+		$query = $getConnection->prepare('UPDATE tbl_criterios SET Str_Desc_Criterio=?,Dtm_Fecha_Crea=now() WHERE Num_Id_Criterio=?');
+		$query->bindParam(1, $descripcion);
+		$query->bindParam(2, $id);
+		$query->execute();
+		$prdId = $getConnection->lastInsertId();
+		$getConnection =  null;
+
+		$theApp->response->headers->set('Content-type', 'application/json');
+		$theApp->response->status(200);
+
+		$datosRes = array('message'=>$prdId);
+		$theApp->response->body(json_encode($datosRes));
+
+	} catch (PDOException $e) {
+		echo 'Error -> ' . $e->getMessage();
+	}
+});
+
+//D: SERVICIO PARA ELIMINAR UNA UNIDAD
+$theApp->delete('/criterio/:id', function($id) use($theApp){
+
+	try {
+		$getConnection = connect();
+
+		$query = $getConnection->query('DELETE FROM tbl_criterios WHERE Num_Id_Criterio ='. $id);
+		$getConnection =  null;	
+
+		$theApp->response->body('Registro elmininado de criterios '.$id);
 
 
 	} catch (PDOException $e) {
