@@ -117,17 +117,15 @@ $theApp->get('/anunciosgen/', function() use($theApp){
 
 //SERVICIO PARA ELIMINAR UN ANUNCIO ADMINISTRACION
 $theApp->delete('/anunciosadmin/:id', function($id) use($theApp){
+
 	try {
 		$getConnection = connect();
 
 		$query = $getConnection->query('DELETE FROM tbl_anuncios_admin WHERE Num_Id_Anun_Admin ='. $id);
-		$getConnection =  null;
+		$getConnection =  null;	
 
-		$theApp->response->headers->set('Content-type', 'application/json');
-		$theApp->response->status(200);
+		$theApp->response->body('Registro elmininado de anuncios administrativos '.$id);
 
-		$datosRes = $query->fetchall();
-		$theApp->response->body(json_encode($datosRes));
 
 	} catch (PDOException $e) {
 		echo 'Error -> ' . $e->getMessage();
@@ -140,14 +138,10 @@ $theApp->delete('/anunciosgen/:id', function($id) use($theApp){
 	try {
 		$getConnection = connect();
 
-		$query = $getConnection->query('DELETE FROM tbl_anuncios_gen WHERE Num_Id_Anun_Gen'. $id);
+		$query = $getConnection->query('DELETE FROM tbl_anuncios_gen WHERE Num_Id_Anun_Gen='. $id);
 		$getConnection =  null;
 
-		$theApp->response->headers->set('Content-type', 'application/json');
-		$theApp->response->status(200);
-
-		$datosRes = $query->fetchall();
-		$theApp->response->body(json_encode($datosRes));
+		$theApp->response->body('Registro elmininado de anuncios generales '.$id);
 
 	} catch (PDOException $e) {
 		echo 'Error -> ' . $e->getMessage();
