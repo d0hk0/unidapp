@@ -111,18 +111,25 @@ $theApp->delete('/anunciosadmin/:id', function($id) use($theApp){
 // CRUD PARA LOS ANUNCIOS QUE PUBLICA EL ADMINISTRADOR
 //--------------------------------------------------------------------------------------------------------------
 //C: SERVICIO PARA CREAR UN NUEVO ANUNCIO GENERALES
-$theApp->post('/anunciosgen/:titulo/:descripcion/:criterio/:usuarioid', function($titulo, $descripcion, $criterio, $usuarioid) use($theApp){
+$theApp->post('/anunciosgen', function() use($theApp){
+		
+	$request = $theApp->request();
+	$body = $request->getBody();
+	$input = json_decode($body); 
 	
-	/*$request = $theApp->request();
-	   $body = $request->getBody();
-	   $input = json_decode($body); 
-
-	$titulo	 = (string)$input->aa_titulo;
+	$titulo = (string)$input->aa_titulo;
 	$descripcion = (string)$input->aa_descripcion;
-	$criterio = (string)$input->aa_criterio;
-	$usuarioid = (string)$input->aa_usuarioid;
-	*/
+	$criterio = (int)$input->aa_criterio;
+	$usuarioid = (int)$input->aa_usuarioid;
+
+	//consulto el criterio	
+	$misFun = new funciones();
+	$misFun->consultaCriterioPorDesc();
+
+
+/*
 	try {
+
 		$getConnection = connect();
 
 		$query = $getConnection->prepare('INSERT INTO tbl_anuncios_gen VALUES (null,?,?,now(),?,?)');
@@ -136,15 +143,14 @@ $theApp->post('/anunciosgen/:titulo/:descripcion/:criterio/:usuarioid', function
 
 		$theApp->response->headers->set('Content-type', 'application/json');
 		$theApp->response->status(200);
-
-		$datosRes = array('message'=>$prdId);
+		$datosRes = array('message'=>'Se creo el anuncio con el id -> '.$prdId);
 		$theApp->response->body(json_encode($datosRes));
-
-		echo "se creo el anuncio general: ".$titulo." con descripcion: ".$descripcion."(".$criterio.$usuarioid.")";
+	
 
 	} catch (PDOException $e) {
 		echo 'Error -> ' . $e->getMessage();
 	}
+*/	
 });
 
 //R: SERVICIO PARA CONSULTAR UN NUEVO ANUNCIO GENERALES
