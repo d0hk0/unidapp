@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-10-2015 a las 03:19:54
+-- Tiempo de generación: 21-10-2015 a las 03:36:40
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -43,19 +43,6 @@ CREATE TABLE IF NOT EXISTS `tbl_anuncios_admin` (
   KEY `FK_Num_Id_Unidad` (`FK_Num_Id_Unidad`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='tabla que contiene los anuncios de la administracion' AUTO_INCREMENT=10 ;
 
---
--- Volcado de datos para la tabla `tbl_anuncios_admin`
---
-
-INSERT INTO `tbl_anuncios_admin` (`Num_Id_Anun_Admin`, `Str_Tit_Anun`, `Str_Desc_Admin`, `FK_Num_Id_Criterio`, `FK_Num_Id_Usr`, `Dtm_Fecha_Crea`, `FK_Num_Id_Unidad`) VALUES
-(3, 'prueba de actualizacion', 'este es un anuncio actualizado', 2, 1, '2015-10-04', 0),
-(4, 'vendo carro ultimo modelo', 'vendo carro 2012 a 50 palos', 1, 1, '2015-09-28', 0),
-(5, 'vendo carro ultimo modelo', 'vendo carro 2012 a 50 palos', 1, 1, '2015-09-28', 0),
-(6, 'vendo carro ultimo modelo', 'vendo carro 2012 a 50 palos', 1, 1, '2015-09-28', 0),
-(7, 'vendo carro ultimo modelo', 'vendo carro 2012 a 50 palos', 1, 1, '2015-09-29', 0),
-(8, 'vendo carro ultimo modelo', 'vendo carro 2012 a 50 palos', 1, 1, '2015-09-30', 0),
-(9, 'prueba post anunadmin', 'prueba descripcion', 1, 1, '2015-10-04', 0);
-
 -- --------------------------------------------------------
 
 --
@@ -76,13 +63,6 @@ CREATE TABLE IF NOT EXISTS `tbl_anuncios_gen` (
   KEY `FK_Num_Id_Usr` (`FK_Num_Id_Usr`),
   KEY `FK_Num_Id_Unidad` (`FK_Num_Id_Unidad`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='tabla que contiene los anuncios de la generales' AUTO_INCREMENT=2 ;
-
---
--- Volcado de datos para la tabla `tbl_anuncios_gen`
---
-
-INSERT INTO `tbl_anuncios_gen` (`Num_Id_Anun_Gen`, `Str_Tit_Anun`, `Str_Desc_Admin`, `Dtm_Fecha_Crea`, `FK_Num_Id_Criterio`, `FK_Num_Id_Usr`, `FK_Num_Id_Unidad`) VALUES
-(1, 'actualizacion de anun general apirest', 'anuncio general actualizado desde el api rest', '2015-10-04', 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -163,16 +143,12 @@ INSERT INTO `tbl_usuarios` (`NUM_ID_USR`, `STR_NOMBRE_USR`, `STR_TIPO_USR`, `STR
 -- Filtros para la tabla `tbl_anuncios_admin`
 --
 ALTER TABLE `tbl_anuncios_admin`
-  ADD CONSTRAINT `tbl_anuncios_admin_ibfk_1` FOREIGN KEY (`FK_Num_Id_Criterio`) REFERENCES `tbl_criterios` (`Num_Id_Criterio`),
-  ADD CONSTRAINT `tbl_anuncios_admin_ibfk_2` FOREIGN KEY (`FK_Num_Id_Usr`) REFERENCES `tbl_usuarios` (`NUM_ID_USR`);
   ADD CONSTRAINT `tbl_anuncios_admin_ibfk_3` FOREIGN KEY (`FK_Num_Id_Unidad`) REFERENCES `tbl_unidades` (`Num_Id_Unidad`);
 
 --
 -- Filtros para la tabla `tbl_anuncios_gen`
 --
 ALTER TABLE `tbl_anuncios_gen`
-  ADD CONSTRAINT `tbl_anuncios_gen_ibfk_1` FOREIGN KEY (`FK_Num_Id_Criterio`) REFERENCES `tbl_criterios` (`Num_Id_Criterio`),
-  ADD CONSTRAINT `tbl_anuncios_gen_ibfk_2` FOREIGN KEY (`FK_Num_Id_Usr`) REFERENCES `tbl_usuarios` (`NUM_ID_USR`);
   ADD CONSTRAINT `tbl_anuncios_gen_ibfk_3` FOREIGN KEY (`FK_Num_Id_Unidad`) REFERENCES `tbl_unidades` (`Num_Id_Unidad`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
