@@ -13,7 +13,7 @@ class funciones
 		$query = "SELECT * FROM tbl_criterios WHERE Str_Desc_Criterio = 'ALTO'";
 		$query->execute();		
 		$Res = $query->fetch();
-		print_r($res)
+		//print_r($res);
 		$getConnection = null;
 
 	} catch (PDOException $e) {
