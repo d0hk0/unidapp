@@ -121,22 +121,22 @@ $theApp->post('/anunciosgen', function() use($theApp){
 	$descripcion = (string)$input->aa_descripcion;
 	$criterio = (int)$input->aa_criterio;
 	$usuarioid = (int)$input->aa_usuarioid;
+	$unidadid = (int)$input->aa_unidadid;
 
 	//consulto el criterio	
-	$misFun = new funciones();
-	$misFun->consultaCriterioPorDesc();
+	//$misFun = new funciones();
+	//$misFun->consultaCriterioPorDesc();
 
-
-/*
 	try {
 
 		$getConnection = connect();
 
-		$query = $getConnection->prepare('INSERT INTO tbl_anuncios_gen VALUES (null,?,?,now(),?,?)');
+		$query = $getConnection->prepare('INSERT INTO tbl_anuncios_gen VALUES (null,?,?,now(),?,?,?)');
 		$query->bindParam(1, $titulo);
 		$query->bindParam(2, $descripcion);
 		$query->bindParam(3, $criterio);
 		$query->bindParam(4, $usuarioid);
+		$query->bindParam(5, $unidadid);
 		$query->execute();
 		$prdId = $getConnection->lastInsertId();
 		$getConnection =  null;
@@ -150,7 +150,6 @@ $theApp->post('/anunciosgen', function() use($theApp){
 	} catch (PDOException $e) {
 		echo 'Error -> ' . $e->getMessage();
 	}
-*/	
 });
 
 //R: SERVICIO PARA CONSULTAR UN NUEVO ANUNCIO GENERALES
