@@ -83,10 +83,9 @@ CREATE TABLE IF NOT EXISTS `tbl_criterios` (
 --
 
 INSERT INTO `tbl_criterios` (`Num_Id_Criterio`, `Str_Desc_Criterio`, `Dtm_Fecha_Crea`) VALUES
-(1, 'A', '2015-09-28'),
-(2, 'Sin Importancia', '2015-10-04'),
-(4, 'Alto', '2015-10-04'),
-(5, 'Bajo', '2015-10-04');
+(1, 'ALTO', NOW()),
+(2, 'MEDIO', NOW()),
+(3, 'BAJO', NOW());
 
 -- --------------------------------------------------------
 

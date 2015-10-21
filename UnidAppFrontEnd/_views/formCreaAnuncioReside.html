@@ -18,9 +18,7 @@
 		<div class="col-sm-3">			    		
 				<select class="form-control" name="tipo_mov" ng-model="aa_criterio" required>
 				  <option value="">---</option>
-				  <option value="ALTO">Alto</option>
-				  <option value="M">Medio</option>
-				  <option value="B">Bajo</option>
+				  <option ng-repeat="criterio in arrCirterios" value="{{ criterio.Num_Id_Criterio }}">{{ criterio.Str_Desc_Criterio }}</option>
 				</select>			
 		</div>
 	</div>
