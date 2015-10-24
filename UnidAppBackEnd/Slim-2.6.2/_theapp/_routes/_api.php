@@ -122,7 +122,7 @@ $theApp->post('/anunciosgen', function() use($theApp){
 $theApp->get('/anunciosgen/', function() use($theApp){
 	try {
 		$getConnection = connect();
-		$query = $getConnection->query('Select * from tbl_anuncios_gen');
+		$query = $getConnection->query('Select * from tbl_anuncios_gen order by 1 desc');
 		$getConnection =  null;
 		$theApp->response->headers->set('Content-type', 'application/json');
 		$theApp->response->status(200);
