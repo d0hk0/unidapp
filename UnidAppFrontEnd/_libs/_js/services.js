@@ -6,9 +6,12 @@ angular.module("unidApp")
 			{update: {method: "PUT"}}
 			);
 })
-.factory("s_anuncios", function($resource){
+.factory("s_anuncios_g", function($resource){
 	return $resource("http://localhost/GitHub/unidapp/UnidAppBackEnd/Slim-2.6.2/anunciosgen/", {update: {method: "PUT"}});
 })
 .factory("s_criterios", function($resource){
 	return $resource("http://localhost/GitHub/unidapp/UnidAppBackEnd/Slim-2.6.2/criterio/", {update: {method: "PUT"}});
+})
+.factory("s_anuncios_a", function($resource){
+	return $resource("http://localhost/GitHub/unidapp/UnidAppBackEnd/Slim-2.6.2/anunciosadmin/", {update: {method: "PUT"}});
 })

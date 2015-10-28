@@ -6,23 +6,27 @@ $theApp->get('/', function() use($theApp){
 // CRUD PARA LOS ANUNCIOS QUE PUBLICA EL ADMINISTRADOR
 //--------------------------------------------------------------------------------------------------------------
 //C: SERVICIO PARA CREAR UN NUEVO ANUNCIO ADMINISTRADOR
-$theApp->post('/anunciosadmin/:titulo/:descripcion/:criterio/:usuarioid', function($titulo, $descripcion, $criterio, $usuarioid) use($theApp){
+//$theApp->post('/anunciosadmin/:titulo/:descripcion/:criterio/:usuarioid', function($titulo, $descripcion, $criterio, $usuarioid) use($theApp){
+$theApp->post('/anunciosadmin', function() use($theApp){
 	
-	/*$request = $theApp->request();
-	   $body = $request->getBody();
-	   $input = json_decode($body); 
-	$titulo	 = (string)$input->aa_titulo;
+	$request = $theApp->request();
+	$body = $request->getBody();
+	$input = json_decode($body); 
+	
+	$titulo = (string)$input->aa_titulo;
 	$descripcion = (string)$input->aa_descripcion;
-	$criterio = (string)$input->aa_criterio;
-	$usuarioid = (string)$input->aa_usuarioid;
-	*/
+	$criterio = (int)$input->aa_criterio;
+	$usuarioid = (int)$input->aa_usuarioid;
+	$unidadid = (int)$input->aa_unidadid;
+
 	try {
 		$getConnection = connect();
-		$query = $getConnection->prepare('INSERT INTO tbl_anuncios_admin VALUES (null,?,?,?,?,now())');
+		$query = $getConnection->prepare('INSERT INTO tbl_anuncios_admin VALUES (null,?,?,?,?,now(),?)');
 		$query->bindParam(1, $titulo);
 		$query->bindParam(2, $descripcion);
 		$query->bindParam(3, $criterio);
 		$query->bindParam(4, $usuarioid);
+		$query->bindParam(5, $unidadid);
 		$query->execute();
 		$prdId = $getConnection->lastInsertId();
 		$getConnection =  null;
@@ -30,7 +34,6 @@ $theApp->post('/anunciosadmin/:titulo/:descripcion/:criterio/:usuarioid', functi
 		$theApp->response->status(200);
 		$datosRes = array('message'=>$prdId);
 		$theApp->response->body(json_encode($datosRes));
-		echo "se creo el anuncio administracion: ".$titulo." con descripcion: ".$descripcion."(".$criterio.$usuarioid.")";
 	} catch (PDOException $e) {
 		echo 'Error -> ' . $e->getMessage();
 	}
@@ -115,7 +118,7 @@ $theApp->post('/anunciosgen', function() use($theApp){
 		$theApp->response->body(json_encode($datosRes));
 	
 	} catch (PDOException $e) {
-		echo 'Error -> ' . $e->getMessage();
+		echo 'Error back-> ' . $e->getMessage();
 	}
 });
 //R: SERVICIO PARA CONSULTAR UN NUEVO ANUNCIO GENERALES
