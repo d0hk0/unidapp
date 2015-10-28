@@ -53,3 +53,6 @@ angular.module("unidApp")
 	.controller("consultaAnunciosController", function($scope, s_anuncios_g){
 		$scope.arrAuncios = s_anuncios_g.query();	
 	})
+	.controller("consultaAnunciosController_a", function($scope, s_anuncios_a){
+		$scope.arrAuncios = s_anuncios_a.query();	
+	})
