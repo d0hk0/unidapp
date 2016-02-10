@@ -34,9 +34,13 @@
       				<li class="dropdown">
 			          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Anuncios <span class="caret"></span></a>
 			          <ul class="dropdown-menu">			            
-			            <li><a href="#/crearAnuncioAdmin">Nuevo anuncio</a></li>
+			            <li><a href="#/crearAnuncioAdmin">Nuevo anuncio Administrados</a></li>
+			            <li><a href="#/crearAnuncioReside">Nuevo anuncio Residente</a></li>
+			            <li role="separator" class="divider"></li>
+			            <li><a href="#/anuncios_g">Ver anuncios de residentes</a></li>
+			            <li><a href="#/anuncios_a">Ver anuncios de administración</a></li>
 			          </ul>
-			        </li>
+			        </li>			       
       			</ul>
 
       			<ul class="nav navbar-nav navbar-right" role="navigation">  			              
@@ -59,14 +63,15 @@
 		<div ng-view><!--Aqui va todo el contenido a mostrar--></div>		
 	</div>
 	<!--Angular Scripts uses-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>	
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+	<script type="text/javascript" src="_libs/_js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="_libs/_js/bootstrap.js"></script>
 	<script type="text/javascript" src="_libs/_js/angular.js"></script>
 	<script type="text/javascript" src="_libs/_js/angular-route.js"></script>
 	<script type="text/javascript" src="_libs/_js/angular-resource.js"></script>
 	<script type="text/javascript" src="_libs/_js/theapp.js"></script>
 	<script type="text/javascript" src="_libs/_js/controllers.js"></script>
-	
+	<script type="text/javascript" src="_libs/_js/services.js"></script>
 	
 </body>
 </html>

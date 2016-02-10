@@ -1,6 +1,6 @@
-<h3>{{ vrTitAnuncios }}</h3>
+<h3>{{ vrTitAnunciosReside }}</h3>
 <hr>
-<form role="form" name="formAnunAdmin" class="form-horizontal" ng-controller="anunciosController" ng-submit="crearAnuncioAdmin()">
+<form role="form" name="formAnunReside" class="form-horizontal" ng-controller="anunciosController" ng-submit="crearAnuncioReside()">
 	<div class="form-group">
 		<label class="col-sm-2 control-label">Titulo</label>
 		<div class="col-sm-6">
@@ -34,7 +34,7 @@
 		</div>
 	</div>
 	<hr>
-	<button type="submit" class="btn btn-success" ng-disabled="formAnunAdmin.aa_titulo.$invalid">Crear anuncio</button>
+	<button type="submit" class="btn btn-success" ng-disabled="formAnunReside.aa_titulo.$invalid">Crear anuncio</button>
 	<button type="button" class="btn btn-warning" ng-click="reset()" >Limpiar</button>
 
 	<h3>{{ vrAnuncioCreado }}</h3>
