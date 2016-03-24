@@ -1,5 +1,5 @@
 <?php 
-$link = mysql_connect('https://mysql8883-env-comunidapp.dal.jelastic.vps-host.net','root','5gDE8hKNQB'); 
+$link = mysql_connect('https://node8894-unidapp-ds.dal.jelastic.vps-host.net','root','qdZvnAKE9o'); 
 if (!$link) { 
 	die('Could not connect to MySQL: ' . mysql_error()); 
 } 
