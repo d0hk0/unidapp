@@ -5,7 +5,7 @@
 <body>
 	<?php
 	//creo la conexion
-	$db = new mysqli('node8894-unidapp-ds.dal.jelastic.vps-host.net', 'root', '', 'qdZvnAKE9o');
+	$db = new mysqli('node8894-unidapp-ds.dal.jelastic.vps-host.net', 'root', 'qdZvnAKE9o', 'bdunidapp');
 
 	//me conecto
 	if($db->connect_errno > 0){
