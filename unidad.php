@@ -31,6 +31,8 @@
 	$query = "SELECT * FROM tbl_unidades ORDER by dtm_fecha_crea";
 	$result = $db->query($query);
 
+	echo "conecte";
+
 	while($row = $result->fetch_array(MYSQLI_ASSOC))
 	{
 		$rows[] = $row;
