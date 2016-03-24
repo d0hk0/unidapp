@@ -1,3 +1,4 @@
+<html>
 <?php 
 $link = mysql_connect('https://node8894-unidapp-ds.dal.jelastic.vps-host.net','root','qdZvnAKE9o'); 
 if (!$link) { 
@@ -5,3 +6,4 @@ if (!$link) {
 } 
 echo 'Connection OK'; mysql_close($link); 
 ?> 
+</html>
