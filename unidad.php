@@ -36,6 +36,7 @@
 	while($row = $result->fetch_array(MYSQLI_ASSOC))
 	{
 		$rows[] = $row;
+		echo $row;
 	}
 
 	foreach($rows as $row)
