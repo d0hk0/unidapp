@@ -5,10 +5,11 @@ if(!defined('CONSGBL')) die ('No tiene permisos sobre este directorio'); //Bloqu
 function connect(){
 	try {
 		//Se definen los parametros del usuario y contraseña de la Base de Datos
-		$user_db = 'root'; $pass_db = '';//local
+		//$user_db = 'root'; $pass_db = '';//local
+		$user_db = 'root'; $pass_db = '5gDE8hKNQB';//jelastic
 		//$user_db = 'titandes_apis'; $pass_db = 'user.apis';//server
 		
-		$connection = new PDO('mysql:host=localhost;dbname=bdunidapp', $user_db, $pass_db);//local
+		$connection = new PDO('mysql:host=https://mysql8883-env-comunidapp.dal.jelastic.vps-host.net;dbname=bdunidapp', $user_db, $pass_db);//local
 		//$connection = new PDO('mysql:host=localhost;dbname=titandes_apirestful01', $user_db, $pass_db);//server
 		$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
