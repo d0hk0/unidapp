@@ -13,7 +13,7 @@
 	}
 	
 	//query a ejecutar
-	$sql = "insert into tbl_unidades(str_nombre, str_direccion, num_numero_aptos, dtm_fecha_crea) values 
+	/*$sql = "insert into tbl_unidades(str_nombre, str_direccion, num_numero_aptos, dtm_fecha_crea) values 
 		('$_REQUEST[nombre]', '$_REQUEST[direccion]', $_REQUEST[noapartamentos], now())";
 
 	//echo $sql."<br>";	
@@ -25,7 +25,7 @@
 	{
 		echo "La unidad fue creada."."<br>";
 
-	}
+	}*/
 
 	//Consulta de las unidades
 	$query = "SELECT * FROM tbl_unidades ORDER by dtm_fecha_crea";
