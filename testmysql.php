@@ -10,7 +10,7 @@
 		$link = mysql_connect('node8894-unidapp-ds.dal.jelastic.vps-host.net', 'root', 'qdZvnAKE9o');
 		$selected = mysql_select_db('bdunidapp',$link);
 	}
-	catch ($e)
+	catch (error $e)
 	{
 		echo $e;
 	}
