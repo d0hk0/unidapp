@@ -10,7 +10,7 @@ function connect(){
 		//$user_db = 'titandes_apis'; $pass_db = 'user.apis';//server
 		
 		$connection = new PDO('mysql:host=192.168.3.170;dbname=bdunidapp', $user_db, $pass_db);//local
-		//$connection = new PDO('mysql:host=localhost;dbname=titandes_apirestful01', $user_db, $pass_db);//server
+		//$connection = new PDO('mysql:host=localhost;dbname=bdunidapp', $user_db, $pass_db);//server
 		$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	} catch (PDOException $e) {
