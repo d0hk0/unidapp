@@ -7,6 +7,8 @@
 	//creo la conexion
 	$db = new mysqli('node8894-unidapp-ds.dal.jelastic.vps-host.net', 'root', 'qdZvnAKE9o', 'bdunidapp');
 
+
+
 	//me conecto
 	if($db->connect_errno > 0){
 	    die('Unable to connect to database [' . $db->connect_error . ']');

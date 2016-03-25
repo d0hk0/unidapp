@@ -13,7 +13,7 @@
 		$selected = mysql_select_db('bdunidapp',$link);
 	}
 	catch (Exception $e) {
-    	echo 'Excepción capturada: ',  $e->getMessage();
+    	echo 'Excepcion capturada: ',  $e->getMessage();
 	} 
 
 	echo 'Connection OK'; 
