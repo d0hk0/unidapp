@@ -1,5 +1,5 @@
 <?php 
-//if(!defined('CONSGBL')) die ('No tiene permisos sobre este directorio'); //Bloque que confirma que se debe haber pasando primero por el enrrutador antes de acceder a la BD
+if(!defined('CONSGBL')) die ('No tiene permisos sobre este directorio'); //Bloque que confirma que se debe haber pasando primero por el enrrutador antes de acceder a la BD
 
 //Funcion encargada de organizar la conexion a la Base de Datos
 function connect(){
