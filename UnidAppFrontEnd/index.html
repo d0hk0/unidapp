@@ -18,6 +18,7 @@
 	</style>
 </head>
 <body>	
+	<div 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -60,7 +61,17 @@
 	
 	<div class="container">		                
 		<h5>> UnidApp / Gestion integral para su comunidad</h5>			
-		<div ng-view><!--Aqui va todo el contenido a mostrar--></div>		
+		<div ng-view>
+			<li class="dropdown">
+	          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Anuncios <span class="caret"></span></a>
+	          <ul class="dropdown-menu">			            
+	            <li><a href="#/crearAnuncioAdmin">Nuevo anuncio Administrados</a></li>
+	            <li><a href="#/crearAnuncioReside">Nuevo anuncio Residente</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="#/anuncios_g">Ver anuncios de residentes</a></li>
+	            <li><a href="#/anuncios_a">Ver anuncios de administración</a></li>
+	          </ul>
+	        </li></div>		
 	</div>
 	<!--Angular Scripts uses-->
 	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
