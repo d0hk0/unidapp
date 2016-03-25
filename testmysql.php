@@ -12,7 +12,7 @@
 	}
 	catch (Exception $e) {
     	echo 'Excepción capturada: ',  $e->getMessage();
-	}
+	} 
 
 	echo 'Connection OK'; 
 	mysql_close($link); 
