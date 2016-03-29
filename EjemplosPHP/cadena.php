@@ -5,7 +5,7 @@
 <body>
 
 <?php
-$cadena1="diego";
+$cadena1="diegodfdsfsdfsdfsdfsdfsdfsd";
 $cadena2="juan";
 $cadena3="ana";
 $todo=$cadena1.$cadena2.$cadena3."<br>";
