@@ -15,7 +15,9 @@ if (isset($_REQUEST['check2']))
   $resta=$_REQUEST['valor1'] - $_REQUEST['valor2'];
   echo "La resta es:".$resta;
 }
+//Hola soy un comentario lalalalala
 ?>
 
 </body>
 </html>
+
