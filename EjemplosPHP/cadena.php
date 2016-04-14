@@ -5,7 +5,7 @@
 <body>
 
 <?php
-$cadena1="prueba de push";
+$cadena1="prueba de add y commit";
 $cadena2="juan";
 $cadena3="ana";
 $todo=$cadena1.$cadena2.$cadena3."<br>";
