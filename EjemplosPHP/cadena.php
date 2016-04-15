@@ -6,7 +6,7 @@
 
 <?php
 $cadena1="prueba de rama ";
-$cadena1="prueba de rama 2 linea";
+$cadena1="prueba de rama 2 linea sdsdsdsdsd";
 $cadena2="juan";
 $cadena3="ana";
 $todo=$cadena1.$cadena2.$cadena3."<br>";
