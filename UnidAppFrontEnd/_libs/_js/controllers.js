@@ -62,7 +62,7 @@ angular.module("unidApp")
 	.controller("registrarUnidadController", function($scope){
 		$scope.vrTitRegistroUnidad = "Registra tu unidad o conjunto residencial";	
 
-		$scope.registrarUnidad = function(){		
+		$scope.unidades = function(){		
 			s_anuncios_g.save({
 							nombre_unidad:$scope.nombreUnidad,
 							correo_unidad:$scope.email,

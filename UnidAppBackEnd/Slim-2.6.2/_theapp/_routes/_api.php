@@ -171,13 +171,16 @@ $theApp->delete('/anunciosgen/:id', function($id) use($theApp){
 // CRUD PARA LAS UNIDADES
 //--------------------------------------------------------------------------------------------------------------
 //C: SERVICIO PARA CREAR UNA NUEVA UNIDAD
-$theApp->post('/unidad/:nombre/:direccion/:numeroaptos', function($nombre, $direccion, $numeroaptos) use($theApp){
+$theApp->post('/unidad/:nombre/:direccion/:numeroaptos/:email/:nombreadmin/:telefono', function($nombre, $direccion, $numeroaptos, $email, $nombreadmin, $telefono) use($theApp){
 	try {
 		$getConnection = connect();
-		$query = $getConnection->prepare('INSERT INTO tbl_unidades VALUES (null,?,?,?,now())');
+		$query = $getConnection->prepare('INSERT INTO tbl_unidades VALUES (null,?,?,?,now(),?,?,?)');
 		$query->bindParam(1, $nombre);
 		$query->bindParam(2, $direccion);
 		$query->bindParam(3, $numeroaptos);
+		$query->bindParam(4, $nombreadmin);
+		$query->bindParam(5, $email);
+		$query->bindParam(6, $telefono);
 		$query->execute();
 		$prdId = $getConnection->lastInsertId();
 		$getConnection =  null;
