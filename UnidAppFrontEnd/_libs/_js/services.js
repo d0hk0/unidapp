@@ -22,8 +22,11 @@ angular.module("unidApp")
     };
 })
 .factory("s_criterios", function($resource){
+<<<<<<< HEAD
 	var URLdomain = window.location.host;
 	
+=======
+>>>>>>> Desarrollo
 	if (URLdomain = "localhost") {
     	return $resource("http://localhost/GitHub/unidapp/UnidAppBackEnd/Slim-2.6.2/criterio/", {update: {method: "PUT"}});
     }
