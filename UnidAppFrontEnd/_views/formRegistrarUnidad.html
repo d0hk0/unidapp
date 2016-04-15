@@ -1,0 +1,36 @@
+<h3>{{ vrTitRegistroUnidad }}</h3>
+<hr>
+<form role="form" name="formRegistrarUnidad" class="form-horizontal" ng-controller="registrarUnidadController" ng-submit="registrarUnidad()">
+	<div class="form-group">
+		<div class="col-sm-6">
+			<input type="text" name="nombre_unidad" class="form-control" ng-model="nombreUnidad" id="" placeholder="Nombre Unidad:" required>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-6">
+			<input type="text" name="nombre_administrador" class="form-control" ng-model="nombreAdministrador" id="" placeholder="Nombre Administrador:" required>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-6">
+			<input type="Email" name="email" class="form-control" ng-model="email" id="" placeholder="email:" required>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-6">
+			<input type="telefono" name="telefono" class="form-control" ng-model="telefono" id="" placeholder="Telefono:" required>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-6">
+			<input type="number" name="noAptosCasas" class="form-control" ng-model="noAptosCasas" id="" placeholder="Numero de Apartartamentos/Casas::" required>
+		</div>
+	</div>
+
+
+	<hr>
+	<button type="submit" class="btn btn-success" ng-disabled="formRegistrarUnidad.nombre_unidad.$invalid">Crear Unidad</button>
+	<button type="button" class="btn btn-warning" ng-click="reset()" >Limpiar</button>
+
+	<h3>{{ vrUnidadCreada }}</h3>
+</form>
