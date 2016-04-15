@@ -22,6 +22,11 @@ angular.module("unidApp")
     };
 })
 .factory("s_criterios", function($resource){
+<<<<<<< HEAD
+	var URLdomain = window.location.host;
+	
+=======
+>>>>>>> Desarrollo
 	if (URLdomain = "localhost") {
     	return $resource("http://localhost/GitHub/unidapp/UnidAppBackEnd/Slim-2.6.2/criterio/", {update: {method: "PUT"}});
     }
@@ -31,6 +36,23 @@ angular.module("unidApp")
 	
 })
 .factory("s_anuncios_a", function($resource){
-	//return $resource("http://localhost/GitHub/unidapp/UnidAppBackEnd/Slim-2.6.2/anunciosadmin/", {update: {method: "PUT"}});
-	return $resource("http://unidapp-ds.dal.jelastic.vps-host.net/UnidAppBackEnd/Slim-2.6.2/anunciosadmin/", {update: {method: "PUT"}});
+	var URLdomain = window.location.host;
+    
+    if (URLdomain = "localhost") {
+        return $resource("http://localhost/GitHub/unidapp/UnidAppBackEnd/Slim-2.6.2/anunciosadmin/", {update: {method: "PUT"}});
+    }
+    else {
+        return $resource("http://unidapp-ds.dal.jelastic.vps-host.net/UnidAppBackEnd/Slim-2.6.2/anunciosadmin/", {update: {method: "PUT"}});
+    };
 })
+.factory("s_unidades", function($resource){
+    var URLdomain = window.location.host;
+    
+    if (URLdomain = "localhost") {
+        return $resource("http://localhost/GitHub/unidapp/UnidAppBackEnd/Slim-2.6.2/unidad/", {update: {method: "PUT"}});
+    }
+    else {
+        return $resource("http://unidapp-ds.dal.jelastic.vps-host.net/UnidAppBackEnd/Slim-2.6.2/unidad/", {update: {method: "PUT"}});
+    };
+})
+

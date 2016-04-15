@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-04-2016 a las 04:03:50
+-- Tiempo de generación: 15-04-2016 a las 05:31:01
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `tbl_anuncios_gen` (
   KEY `FK_Num_Id_Criterio` (`FK_Num_Id_Criterio`),
   KEY `FK_Num_Id_Usr` (`FK_Num_Id_Usr`),
   KEY `FK_Num_Id_Unidad` (`FK_Num_Id_Unidad`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='tabla que contiene los anuncios de la generales' AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='tabla que contiene los anuncios de la generales' AUTO_INCREMENT=9 ;
 
 --
 -- Truncar tablas antes de insertar `tbl_anuncios_gen`
@@ -99,7 +99,8 @@ INSERT INTO `tbl_anuncios_gen` (`Num_Id_Anun_Gen`, `Str_Tit_Anun`, `Str_Desc_Adm
 (4, 'prueba', 'opa', '2015-10-27', 1, 1, 1),
 (5, 'fgd', 'dgf', '2015-10-27', 1, 1, 1),
 (6, 'prueba 2', 'sfd', '2015-10-27', 1, 1, 1),
-(7, 'eeeee', 'eeee', '2015-10-27', 1, 1, 1);
+(7, 'eeeee', 'eeee', '2015-10-27', 1, 1, 1),
+(8, 'fsd', 'fsdf', '2016-04-14', 2, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -145,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `tbl_unidades` (
   `Dtm_Fecha_Crea` date DEFAULT NULL COMMENT 'Fecha de Creacion o Actualizacion',
   `str_nombre_admin` text COMMENT 'nombre de la administracion',
   `str_email` text COMMENT 'correo de la adminitracion',
-  `telefono` text COMMENT 'teléfono de contacto en la adminitracion',
+  `str_telefono` text COMMENT 'teléfono de contacto en la adminitracion',
   PRIMARY KEY (`Num_Id_Unidad`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='tabla que contiene llas unidades' AUTO_INCREMENT=1000 ;
 
@@ -158,7 +159,7 @@ TRUNCATE TABLE `tbl_unidades`;
 -- Volcado de datos para la tabla `tbl_unidades`
 --
 
-INSERT INTO `tbl_unidades` (`Num_Id_Unidad`, `Str_Nombre`, `Str_Direccion`, `Num_Numero_aptos`, `Dtm_Fecha_Crea`, `str_nombre_admin`, `str_email`, `telefono`) VALUES
+INSERT INTO `tbl_unidades` (`Num_Id_Unidad`, `Str_Nombre`, `Str_Direccion`, `Num_Numero_aptos`, `Dtm_Fecha_Crea`, `str_nombre_admin`, `str_email`, `str_telefono`) VALUES
 (1, 'guasimos', 'cra 65 no 13B - 125 Bosques de Limonar', 400, '2015-10-04', NULL, NULL, NULL),
 (999, 'Sin Unidad', 'Sin Unidad', 0, '2015-10-04', NULL, NULL, NULL);
 
