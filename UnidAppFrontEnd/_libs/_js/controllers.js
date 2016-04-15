@@ -61,4 +61,32 @@ angular.module("unidApp")
 	})
 	.controller("registrarUnidadController", function($scope){
 		$scope.vrTitRegistroUnidad = "Registra tu unidad o conjunto residencial";	
+
+		$scope.registrarUnidad = function(){		
+			s_anuncios_g.save({
+							nombre_unidad:$scope.nombreUnidad,
+							correo_unidad:$scope.email,
+							direccion_unidad:$scope.direccionUnidad,
+							nombre_administrador:$scope.nombreAdministrador,
+							numero_apartamento:$scope.noAptosCasas,
+							telefono_unidad:$scope.telefono})
+						.$promise.then(function(data){
+						    // success handler					    
+						    if(data.message){
+						    	console.log(data.message);
+						    }else{
+						    	console.log('success-> '+data);
+						    }
+						}, function(error){
+						    // error handler
+						    console.log('error-> '+error);
+						});		
+			$location.path('/#');
+		}
+		$scope.reset = function(){
+			$scope.aa_titulo = "";
+			$scope.aa_descripcion = "";
+			$scope.aa_criterio = "";
+			$scope.aa_usuarioid = "";
+		}
 	})
