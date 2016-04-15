@@ -5,12 +5,18 @@ if(!defined('CONSGBL')) die ('No tiene permisos sobre este directorio'); //Bloqu
 function connect(){
 	try {
 		//Se definen los parametros del usuario y contraseña de la Base de Datos
+
+
+			$user_db = 'root'; $pass_db = '';
+			$connection = new PDO('mysql:host=localhost;dbname=bdunidapp', $user_db, $pass_db);//server
+
+	    	//$user_db = 'root'; $pass_db = 'qdZvnAKE9o';//jelastic
+	    	//$connection = new PDO('mysql:host=192.168.3.170;dbname=bdunidapp', $user_db, $pass_db);//local
+
 		//$user_db = 'root'; $pass_db = '';//local
-		$user_db = 'root'; $pass_db = 'qdZvnAKE9o';//jelastic
-		//$user_db = 'titandes_apis'; $pass_db = 'user.apis';//server
 		
-		$connection = new PDO('mysql:host=192.168.3.170;dbname=bdunidapp', $user_db, $pass_db);//local
-		//$connection = new PDO('mysql:host=localhost;dbname=bdunidapp', $user_db, $pass_db);//server
+		//$user_db = 'titandes_apis'; $pass_db = 'user.apis';//server	
+		
 		$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	} catch (PDOException $e) {
