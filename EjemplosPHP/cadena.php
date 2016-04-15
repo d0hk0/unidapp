@@ -5,7 +5,8 @@
 <body>
 
 <?php
-$cadena1="prueba de add y commit";
+$cadena1="prueba de rama ";
+$cadena1="prueba de rama 2 linea";
 $cadena2="juan";
 $cadena3="ana";
 $todo=$cadena1.$cadena2.$cadena3."<br>";
