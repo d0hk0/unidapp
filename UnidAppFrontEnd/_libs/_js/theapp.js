@@ -16,6 +16,10 @@ angular.module("unidApp", ["ngRoute","ngResource"])
 		.when("/anuncios_a", {
 			controller: "consultaAnunciosController_a",
 			templateUrl: "_views/formVisualizaAnuncios_a.html"
-		})			
+		})
+		.when("/registrarUnidad", {
+			controller: "registrarUnidadController",
+			templateUrl: "_views/formRegistrarUnidad.html"
+		})				
 		.otherwise("/");		
 })

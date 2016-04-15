@@ -2,7 +2,10 @@ angular.module("unidApp")
 	.controller("anunciosController", function($scope, $location, s_anuncios_a, s_anuncios_g, s_criterios){
 		/*Variables*/
 		$scope.vrTitAnuncios = "Creacion de Anuncios - Administracion";
-		$scope.vrTitAnunciosReside = "Creacion de Anuncios - Residente";	
+		$scope.vrTitAnunciosReside = "Creacion de Anuncios - Residente";
+		
+
+		/*trae los criterios*/	
 		$scope.arrCirterios = s_criterios.query();	
 		/*Funciones*/
 		$scope.crearAnuncioAdmin = function(){
@@ -55,4 +58,7 @@ angular.module("unidApp")
 	})
 	.controller("consultaAnunciosController_a", function($scope, s_anuncios_a){
 		$scope.arrAuncios = s_anuncios_a.query();	
+	})
+	.controller("registrarUnidadController", function($scope){
+		$scope.vrTitRegistroUnidad = "Registra tu unidad o conjunto residencial";	
 	})
